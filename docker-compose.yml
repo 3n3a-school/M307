@@ -1,0 +1,55 @@
+version: '3'
+services:
+    webserver:
+        container_name: webserver
+        build:
+            context: ./src
+            dockerfile: Containerfile
+        depends_on:
+            - db
+        volumes:
+            - ./src:/var/www/html/
+            # - webserver:/var/www/html/
+        environment:
+            DB_HOST: db
+            DB_PORT: 3306
+            DB_USER: m307
+            DB_PASS: m307
+            DB_DB: m307
+            DEBUG: 1
+        ports:
+            - 80:80
+        networks:
+            - m307
+
+    db:
+        container_name: db
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: m307
+            MYSQL_DATABASE: m307
+            MYSQL_USER: m307
+            MYSQL_PASSWORD: m307
+        networks:
+            - m307
+    
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_USER: m307
+            PMA_PASSWORD: m307
+            PMA_ARBITRARY: 1
+        networks:
+            - m307
+
+networks:
+    m307:
+
+volumes:
+    webserver:
