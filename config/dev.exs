@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :m307, M307.Repo,
-  username: "root",
-  password: "",
+  username: "m307",
+  password: "m307",
   hostname: "localhost",
-  database: "m307_dev",
+  database: "m307",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

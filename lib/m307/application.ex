@@ -10,8 +10,6 @@ defmodule M307.Application do
     children = [
       # Start the Ecto repository
       M307.Repo,
-      # Start the Telemetry supervisor
-      M307Web.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: M307.PubSub},
       # Start the Endpoint (http/https)
