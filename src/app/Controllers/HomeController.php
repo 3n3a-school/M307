@@ -1,12 +1,13 @@
 <?php
 
-class WelcomeController
+class HomeController
 {
 	public function index()
 	{
-		$hello = 'Viel Spass beim Programmieren!';
+		$vars['title'] = "M307";
+		$vars['template'] = "home.view.php";
 		
-		require 'app/Views/welcome.view.php';
+		require 'app/Views/base.view.php';
 	}
 	
 	public function new()

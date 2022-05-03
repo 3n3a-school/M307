@@ -2,13 +2,15 @@
 require 'core/bootstrap.php';
 
 $routes = [
-	'/' => 'WelcomeController@index',
+	'/' => 'HomeController@index',
 ];
 
 $db = [
-	'name'     => 'meinedatenbank',
-	'username' => 'root',
-	'password' => '',
+	'host'	   => $_ENV['DB_HOST'],
+	'port'	   => $_ENV['DB_PORT'],
+	'name'     => $_ENV['DB_DB'],
+	'username' => $_ENV['DB_USER'],
+	'password' => $_ENV['DB_PASS'],
 ];
 
 $router = new Router($routes);
