@@ -3,13 +3,10 @@ services:
     webserver:
         container_name: webserver
         build:
-            context: ./src
-            dockerfile: Containerfile
+            context: .
+            dockerfile: Dockerfile
         depends_on:
             - db
-        volumes:
-            - ./src:/var/www/html/
-            # - webserver:/var/www/html/
         environment:
             DB_HOST: db
             DB_PORT: 3306
@@ -50,6 +47,3 @@ services:
 
 networks:
     m307:
-
-volumes:
-    webserver:
