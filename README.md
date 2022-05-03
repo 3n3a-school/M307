@@ -1,5 +1,11 @@
 # M307
 
+## Generate Project
+
+```sh
+mix phx.new —database=mysql —no-dashboard —no-live —no-mailer
+```
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
