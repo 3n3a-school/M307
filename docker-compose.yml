@@ -8,12 +8,10 @@ services:
         depends_on:
             - db
         environment:
-            DB_HOST: db
-            DB_PORT: 3306
-            DB_USER: m307
-            DB_PASS: m307
-            DB_DB: m307
-            DEBUG: 1
+            DATABASE_URL: ecto://m307:m307@db/m307
+            SECRET_KEY_BASE: AEHwSQet/650xylvkc2r/XzOBS0HunCyRMNEVzebnlB1gUWfs80leMzKlIgioFul
+            PHX_HOST: localhost
+            PORT: 80
         ports:
             - 80:80
         networks:
