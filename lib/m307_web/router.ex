@@ -18,13 +18,10 @@ defmodule M307Web.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/todos", TodoController
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", M307Web do
-    pipe_through :api
-
-    resources "/cities", CityController, except: [:new, :edit]
-  end
+  # scope "/api", M307Web do
+  #   pipe_through :api
+  # end
 end

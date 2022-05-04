@@ -7,10 +7,10 @@ defmodule M307Web.Endpoint do
   @session_options [
     store: :cookie,
     key: "_m307_key",
-    signing_salt: "AulTpITl"
+    signing_salt: "uNAlsNM/"
   ]
 
-  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  # socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -32,6 +32,7 @@ defmodule M307Web.Endpoint do
   end
 
   plug Plug.RequestId
+  plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],

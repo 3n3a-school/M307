@@ -17,11 +17,8 @@ config :m307, M307.Repo,
 # you can enable the server option below.
 config :m307, M307Web.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "S8wxFVtz8csVhH2xQQlhkT3KzaCNnouANZjNDM6G2pFdptxk7Bos/jaQ/tdJ+V5j",
+  secret_key_base: "tFU0jmchkNgsj6fzO736uBDg9Ng+4IKlS6Se3vHPjcvMS5xxmhKZPFuLJZLFdoBv",
   server: false
-
-# In test we don't send emails.
-config :m307, M307.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn

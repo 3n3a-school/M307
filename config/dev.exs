@@ -23,7 +23,7 @@ config :m307, M307Web.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "34HnTzPr+htFI8wQ7TTrWde79xIQ7TxSggfX/8b6EX1lrmmpKnhE4x8qbGN+DLaW",
+  secret_key_base: "wPSr10rO65CPXdSeJFFWTHOLHTs7lh3F8tYlZFcwErKySVfFsEn/VqgUxNnXi3RM",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
