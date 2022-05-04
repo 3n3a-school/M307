@@ -61,7 +61,7 @@ defmodule M307.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["cmd --cd assets node build.js --deploy", "phx.digest"]
+      "assets.deploy": ["cmd --cd assets npm i", "cmd --cd assets node build.js --deploy", "phx.digest"]
     ]
   end
 end

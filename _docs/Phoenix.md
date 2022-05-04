@@ -20,6 +20,7 @@
 * easy setup with code generation
 * standard naming / folder conventions `NAME.FORMAT.TEMPLATING_LANGUAGE`
 * PHP isn't meant to be used with a Router ...
+* [Phoenix + Vue](https://dev.to/sethcalebweeks/phoenix-16-vue-esbuild-59i0)
 
 ### A Controller
 
