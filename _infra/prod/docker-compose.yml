@@ -18,7 +18,7 @@ services:
             - m307
 
     db:
-        container_name: db
+        container_name: db_prod
         image: mysql
         restart: always
         environment:

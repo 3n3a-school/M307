@@ -2,4 +2,4 @@
 
 dir=$(pwd)
 
-docker-compose up --build -d -p m307_dev
+docker-compose -p m307_dev up --build -d
