@@ -1,7 +1,6 @@
 version: '3'
 services:
     webserver:
-        container_name: webserver
         build:
             context: ../../
             dockerfile: Dockerfile
@@ -18,7 +17,6 @@ services:
             - m307
 
     db:
-        container_name: db_prod
         image: mysql
         restart: always
         environment:
