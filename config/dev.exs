@@ -26,7 +26,8 @@ config :m307, M307Web.Endpoint,
   secret_key_base: "wPSr10rO65CPXdSeJFFWTHOLHTs7lh3F8tYlZFcwErKySVfFsEn/VqgUxNnXi3RM",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    # esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support

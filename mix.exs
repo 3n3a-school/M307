@@ -41,7 +41,6 @@ defmodule M307.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.17.5"},
       {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
@@ -58,11 +57,11 @@ defmodule M307.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup"],
+      setup: ["deps.get", "ecto.setup", "cmd --cd assets npm install"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["cmd --cd assets node build.js --deploy", "phx.digest"]
     ]
   end
 end
