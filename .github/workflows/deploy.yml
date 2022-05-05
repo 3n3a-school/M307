@@ -25,7 +25,7 @@ jobs:
           scp_target: ~/svc/uk-m307/
           before_script: |
             mkdir -p ~/svc/uk-m307/
-            cd ~/svc/uk-m307/
+            cd ~/svc/uk-m307/_infra/prod/
             docker-compose down &
           after_script: |
-            cd ~/svc/uk-m307/ && docker-compose up --build -d
+            cd ~/svc/uk-m307/_infra/prod/ && docker-compose -p m307_prod up --build -d
