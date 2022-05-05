@@ -20,6 +20,7 @@ ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-$
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
 ARG DATABASE_URL="lol"
+ARG SECRET_KEY_BASE="lol"
 
 FROM ${BUILDER_IMAGE} as builder
 
@@ -37,6 +38,7 @@ RUN mix local.hex --force && \
 # set build ENV
 ENV MIX_ENV="prod"
 ENV DATABASE_URL=${DATABASE_URL}
+ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
