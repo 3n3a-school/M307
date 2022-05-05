@@ -19,9 +19,6 @@ ARG DEBIAN_VERSION=bullseye-20210902-slim
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
-ARG DATABASE_URL="lol"
-ARG SECRET_KEY_BASE="lol"
-
 FROM ${BUILDER_IMAGE} as builder
 
 # install build dependencies
@@ -37,8 +34,6 @@ RUN mix local.hex --force && \
 
 # set build ENV
 ENV MIX_ENV="prod"
-ENV DATABASE_URL=${DATABASE_URL}
-ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
@@ -65,9 +60,6 @@ RUN mix compile
 
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
-
-# Setup Database
-RUN mix ecto.setup
 
 COPY rel rel
 RUN mix release
