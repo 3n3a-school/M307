@@ -25,4 +25,13 @@ defmodule M307.Release do
   defp load_app do
     Application.load(@app)
   end
+
+  def seeds do
+    Application.load(@app)
+
+    {:ok, _, _} =
+      Ecto.Migrator.with_repo(M307.Repo, fn _repo ->
+        Code.eval_file("../lib/m307-0.1.0/priv/repo/seeds.exs")
+      end)
+  end
 end
