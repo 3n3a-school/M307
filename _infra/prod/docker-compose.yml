@@ -10,7 +10,7 @@ services:
             DATABASE_URL: ecto://m307:m307@db/m307
             SECRET_KEY_BASE: AEHwSQet/650xylvkc2r/XzOBS0HunCyRMNEVzebnlB1gUWfs80leMzKlIgioFul
             PHX_HOST: localhost
-            PORT: 80
+            PORT: 8003
         ports:
             - 80:80
         networks:
@@ -31,7 +31,7 @@ services:
         image: phpmyadmin
         restart: always
         ports:
-            - 8080:80
+            - 8083:80
         environment:
             PMA_HOST: db
             PMA_PORT: 3306
