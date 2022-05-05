@@ -18,6 +18,7 @@ defmodule M307Web.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/loans", LoanController
   end
 
   # Other scopes may use custom stacks.
