@@ -4,6 +4,8 @@ services:
         build:
             context: ../../
             dockerfile: Dockerfile
+            args:
+              DATABASE_URL: ecto://m307:m307@db/m307
         depends_on:
             - db
         environment:
