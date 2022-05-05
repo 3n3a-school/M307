@@ -1,17 +1,23 @@
 defmodule M307Web.LoanController do
   use M307Web, :controller
 
+  alias M307.Repo
   alias M307.Credit
   alias M307.Credit.Loan
+  alias M307.Credit.Package
+  import Ecto.Query
+
 
   def index(conn, _params) do
     loans = Credit.list_loans()
-    render(conn, "index.html", loans: loans)
+    parents = Repo.all from p in Package, select: {p.id, p.name}
+    render(conn, "index.html", loans: loans, parents: parents)
   end
 
   def new(conn, _params) do
     changeset = Credit.change_loan(%Loan{})
-    render(conn, "new.html", changeset: changeset)
+    parents = Repo.all from p in Package, select: {p.id, p.name}
+    render(conn, "new.html", changeset: changeset, parents: parents)
   end
 
   def create(conn, %{"loan" => loan_params}) do

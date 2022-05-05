@@ -24,6 +24,10 @@
   <%= label f, :status %>
   <%= select f, :status, Ecto.Enum.values(M307.Credit.Loan, :status), prompt: "Choose a value" %>
   <%= error_tag f, :status %>
+  
+  <%= label f, :credit_package %>
+  <%= select f, :credit_package, @parents, prompt: "Choose a value" %>
+  <%= error_tag f, :credit_package %>
 
   <div>
     <%= submit "Save" %>
