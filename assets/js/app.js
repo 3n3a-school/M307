@@ -1,6 +1,7 @@
 import "../css/app.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-icons/font/bootstrap-icons.css"
+import "../vendor/bootstrap.min.css"
+import "../vendor/bootstrap-icons.css"
 
 import "phoenix_html"
-import "bootstrap"
+import "../vendor/bootstrap.bundle.min.js"
+
