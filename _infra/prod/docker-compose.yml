@@ -12,7 +12,7 @@ services:
             PHX_HOST: localhost
             PORT: 8003
         ports:
-            - 80:80
+            - 8003:80
         networks:
             - m307
 
