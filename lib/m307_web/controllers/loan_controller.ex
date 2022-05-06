@@ -10,13 +10,13 @@ defmodule M307Web.LoanController do
 
   def index(conn, _params) do
     loans = Credit.list_loans()
-    parents = Repo.all from p in Package, select: {p.id, p.name}
+    parents = Repo.all from p in Package, select: {p.name, p.id}
     render(conn, "index.html", loans: loans, parents: parents)
   end
 
   def new(conn, _params) do
     changeset = Credit.change_loan(%Loan{})
-    parents = Repo.all from p in Package, select: {p.id, p.name}
+    parents = Repo.all from p in Package, select: {p.name, p.id}
     render(conn, "new.html", changeset: changeset, parents: parents)
   end
 

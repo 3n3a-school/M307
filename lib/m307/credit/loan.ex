@@ -16,7 +16,7 @@ defmodule M307.Credit.Loan do
   @doc false
   def changeset(loan, attrs) do
     loan
-    |> cast(attrs, [:name, :email, :phone, :rate_count, :status])
+    |> cast(attrs, [:name, :email, :phone, :rate_count, :status, :credit_package])
     |> validate_required([:name, :email, :phone, :rate_count, :status])
   end
 end
