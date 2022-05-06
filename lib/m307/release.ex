@@ -11,6 +11,8 @@ defmodule M307.Release do
     for repo <- repos() do
       {:ok, _, _} = Ecto.Migrator.with_repo(repo, &Ecto.Migrator.run(&1, :up, all: true))
     end
+
+    M307.Release.Seeder.seed(Elixir.M307.Repo, "seed.exs")
   end
 
   def rollback(repo, version) do
@@ -24,14 +26,5 @@ defmodule M307.Release do
 
   defp load_app do
     Application.load(@app)
-  end
-
-  def seeds do
-    Application.load(@app)
-
-    {:ok, _, _} =
-      Ecto.Migrator.with_repo(M307.Repo, fn _repo ->
-        Code.eval_file("../lib/m307-0.1.0/priv/repo/seeds.exs")
-      end)
   end
 end
