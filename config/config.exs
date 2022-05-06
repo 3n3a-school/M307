@@ -10,6 +10,9 @@ import Config
 config :m307,
   ecto_repos: [M307.Repo]
 
+config :m307, M307.Repo,
+  start_apps_before_migration: [:logger]
+
 # Configures the endpoint
 config :m307, M307Web.Endpoint,
   url: [host: "localhost"],

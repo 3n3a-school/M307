@@ -27,7 +27,7 @@ defmodule M307.Release do
   end
 
   def seeds do
-    Application.load(@app)
+    load_app()
 
     {:ok, _, _} =
       Ecto.Migrator.with_repo(M307.Repo, fn _repo ->
