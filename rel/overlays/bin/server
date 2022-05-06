@@ -1,5 +1,4 @@
 #!/bin/sh
 cd -P -- "$(dirname -- "$0")"
-exec ./m307 eval M307.Release.migrate
-exec ./m307 eval 'M307.Release.Seeder.seed(Elixir.M307.Repo, "seed.exs")'
+exec ./m307 eval M307.Release.migrate &
 PHX_SERVER=true exec ./m307 start

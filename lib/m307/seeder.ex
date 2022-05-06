@@ -30,7 +30,7 @@ defmodule M307.Release.Seeder do
 
   @spec eval_seed(Ecto.Repo.t(), String.t()) :: any()
   defp eval_seed(repo, filename) do
-    seeds_file = get_path(repo, "seeds", filename)
+    seeds_file = "../lib/m307-0.1.0/priv/repo/seeds.exs" #get_path(repo, "seeds", filename)
 
     if File.regular?(seeds_file) do
       {:ok, Code.eval_file(seeds_file)}
