@@ -135,6 +135,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="validierung"><a class="header" href="#validierung">Validierung</a></h1>
+<table><thead><tr><th>Formular</th><th>Feld</th><th>Validierung</th></tr></thead><tbody>
+<tr><td>Create/Edit Kredit</td><td>Name</td><td>required, trim,</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Email</td><td>required, trim, contains '@'</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Phone</td><td>trim, regular expression</td></tr>
+<tr><td>Create Kredit</td><td>Rate Count</td><td>&gt;= 1 and &lt;= 10</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Credit package</td><td>required, kann nur ein gültiges Credit package sein, welches in der credit_packages Tabelle aufgeführt ist</td></tr>
+<tr><td>Edit Kredit</td><td>Status</td><td>required, kann nur open oder closed closed sein (enum type)</td></tr>
+</tbody></table>
 
                     </main>
 

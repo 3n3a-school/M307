@@ -154,16 +154,50 @@
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sitemap"><a class="header" href="#sitemap">Sitemap</a></h1>
+<p>In der untenstehenden Tabelle sind sämtliche Routes ersichtlich, welche für den Nutzer der Seite sichtbar sind. Interne Routes, welche nur PUT oder PATCH Requests erlauben, sind nicht aufgelistet, da sie nur als API Routes dienen.</p>
 <table><thead><tr><th>Titel</th><th>Route</th><th>Inhalt</th></tr></thead><tbody>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td>Startpage</td><td>/</td><td>Die Startseite mit Navigation.</td></tr>
+<tr><td>Listing Loans</td><td>/loans</td><td>Liste aller offenen Kredite.</td></tr>
+<tr><td>New Loan</td><td>/loans/new</td><td>Formular zur Erstellung eines neuen Kredits.</td></tr>
+<tr><td>Edit Loan</td><td>/loans/:id/edit</td><td>Formular zur Bearbeitung eines existierenden Kredits.</td></tr>
+<tr><td>Show Loan</td><td>/loans/:id</td><td>Zeigt die Details eines existierenden Kredits an.</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="formulare"><a class="header" href="#formulare">Formulare</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="validierung"><a class="header" href="#validierung">Validierung</a></h1>
+<table><thead><tr><th>Formular</th><th>Feld</th><th>Validierung</th></tr></thead><tbody>
+<tr><td>Create/Edit Kredit</td><td>Name</td><td>required, trim,</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Email</td><td>required, trim, contains '@'</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Phone</td><td>trim, regular expression</td></tr>
+<tr><td>Create Kredit</td><td>Rate Count</td><td>&gt;= 1 and &lt;= 10</td></tr>
+<tr><td>Create/Edit Kredit</td><td>Credit package</td><td>required, kann nur ein gültiges Credit package sein, welches in der credit_packages Tabelle aufgeführt ist</td></tr>
+<tr><td>Edit Kredit</td><td>Status</td><td>required, kann nur open oder closed closed sein (enum type)</td></tr>
+</tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="datenbank"><a class="header" href="#datenbank">Datenbank</a></h1>
+<p>In der untenstehenden Graphik ist unsere Datenbank Struktur ersichtlich. Sie besteht aus zwei Tabellen, namentlich &quot;loans&quot;, welche sämtliche Kredite enthält und &quot;credit_packages&quot;, welche die verfügbaren Kredit Packete enthält.</p>
+<p><img src="https://cdn.discordapp.com/attachments/973475824546230292/973572557070549042/unknown.png" alt="img" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testfälle"><a class="header" href="#testfälle">Testfälle</a></h1>
+<h2 id="1-liste-der-kreditverleihen"><a class="header" href="#1-liste-der-kreditverleihen">1. Liste der Kreditverleihen</a></h2>
+<pre><code>GEGEBEN SEI
+WENN
+DANN
+</code></pre>
+<h2 id="2-details-eines-kreditverleihs"><a class="header" href="#2-details-eines-kreditverleihs">2. Details eines Kreditverleihs</a></h2>
+<pre><code>GEGEBEN SEI
+WENN
+DANN
+</code></pre>
+<h2 id="3-löschen-eines-kreditverleihs"><a class="header" href="#3-löschen-eines-kreditverleihs">3. Löschen eines Kreditverleihs</a></h2>
+<pre><code>GEGEBEN SEI
+WENN
+DANN
+</code></pre>
+<h2 id="4-bearbeiten-eines-kreditverleihs"><a class="header" href="#4-bearbeiten-eines-kreditverleihs">4. Bearbeiten eines Kreditverleihs</a></h2>
+<pre><code>GEGEBEN SEI
+WENN
+DANN
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h1>
+<p><img src="dokumentation/roadmap/image-20220510150456774.png" alt="image-20220510150456774" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="technologie"><a class="header" href="#technologie">Technologie</a></h1>
 
                     </main>
