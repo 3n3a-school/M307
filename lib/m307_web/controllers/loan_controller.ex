@@ -23,7 +23,7 @@ defmodule M307Web.LoanController do
         |> redirect(to: Routes.loan_path(conn, :show, loan))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, credit_packages: Credit.list_packages())
     end
   end
 
