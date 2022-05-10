@@ -4,7 +4,6 @@ defmodule M307Web.LoanController do
   alias M307.Credit
   alias M307.Credit.Loan
 
-
   def index(conn, _params) do
     loans = Credit.list_loans()
     render(conn, "index.html", loans: loans)
