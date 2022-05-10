@@ -42,6 +42,10 @@ defmodule M307.Credit.Loan do
 
   def validate_rate_count(changeset) do
     changeset
-    |> validate_number(:rate_count, greater_than_or_equal_to: 0, lower_than_or_equal_to: 10)
+    |> validate_number(:rate_count,
+      greater_than_or_equal_to: 0,
+      less_than_or_equal_to: 10,
+      message: "Die Anzahl Raten muss zwischen null und zehn liegen."
+    )
   end
 end
