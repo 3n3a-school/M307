@@ -41,6 +41,10 @@
     <%= error_tag f, :credit_package %>
   </div>
   
+  <%= label f, :credit_package %>
+  <%= select f, :credit_package, @credit_packages, prompt: "Choose a value" %>
+  <%= error_tag f, :credit_package %>
+
   <div>
     <%= submit "Save", class: ["form-control", "btn-default"] %>
   </div>

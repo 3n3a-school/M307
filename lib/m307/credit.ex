@@ -7,6 +7,7 @@ defmodule M307.Credit do
   alias M307.Repo
 
   alias M307.Credit.Loan
+  alias M307.Credit.Package
 
   @doc """
   Returns the list of loans.
@@ -101,4 +102,31 @@ defmodule M307.Credit do
   def change_loan(%Loan{} = loan, attrs \\ %{}) do
     Loan.changeset(loan, attrs)
   end
+
+  @doc """
+  Returns the list of credit packages.
+
+  ## Examples
+
+      iex> list_pacakges()
+      [%Package{}, ...]
+
+  """
+  def list_packages do
+    Repo.all from p in Package, select: {p.name, p.id}
+  end
+
+  @doc """
+  Returns a single credit package
+
+  ## Examples
+
+      iex> get_package!(123)
+      %Loan{}
+
+      iex> get_package!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_package!(id), do: Repo.get!(Package, id)
 end

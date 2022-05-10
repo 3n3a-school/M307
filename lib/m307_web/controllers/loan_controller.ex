@@ -1,23 +1,19 @@
 defmodule M307Web.LoanController do
   use M307Web, :controller
 
-  alias M307.Repo
   alias M307.Credit
   alias M307.Credit.Loan
-  alias M307.Credit.Package
-  import Ecto.Query
 
 
   def index(conn, _params) do
     loans = Credit.list_loans()
-    parents = Repo.all from p in Package, select: {p.name, p.id}
-    render(conn, "index.html", loans: loans, parents: parents)
+    render(conn, "index.html", loans: loans)
   end
 
   def new(conn, _params) do
     changeset = Credit.change_loan(%Loan{})
-    parents = Repo.all from p in Package, select: {p.name, p.id}
-    render(conn, "new.html", changeset: changeset, parents: parents)
+    credit_packages = Credit.list_packages()
+    render(conn, "new.html", changeset: changeset, credit_packages: credit_packages)
   end
 
   def create(conn, %{"loan" => loan_params}) do
@@ -34,14 +30,15 @@ defmodule M307Web.LoanController do
 
   def show(conn, %{"id" => id}) do
     loan = Credit.get_loan!(id)
-    credit_package = Repo.get!(Package, loan.credit_package)
+    credit_package = Credit.get_package!(loan.credit_package)
     render(conn, "show.html", loan: loan, credit_package: credit_package)
   end
 
   def edit(conn, %{"id" => id}) do
     loan = Credit.get_loan!(id)
     changeset = Credit.change_loan(loan)
-    render(conn, "edit.html", loan: loan, changeset: changeset)
+    credit_packages = Credit.list_packages()
+    render(conn, "edit.html", loan: loan, changeset: changeset, credit_packages: credit_packages)
   end
 
   def update(conn, %{"id" => id, "loan" => loan_params}) do
