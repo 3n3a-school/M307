@@ -1,6 +1,8 @@
 <h1>Listing Loans</h1>
 
-<table>
+<span><%= link "New Loan", to: Routes.loan_path(@conn, :new) %></span>
+
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -30,5 +32,3 @@
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Loan", to: Routes.loan_path(@conn, :new) %></span>

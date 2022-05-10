@@ -37,14 +37,10 @@
   
   <div class="mb-3">
     <%= label f, :credit_package %>
-    <%= select f, :credit_package, @parents, prompt: "Choose a value", class: ["form-control"] %>
+    <%= select f, :credit_package, @credit_packages, prompt: "Choose a value", class: ["form-control"] %>
     <%= error_tag f, :credit_package %>
   </div>
   
-  <%= label f, :credit_package %>
-  <%= select f, :credit_package, @credit_packages, prompt: "Choose a value" %>
-  <%= error_tag f, :credit_package %>
-
   <div>
     <%= submit "Save", class: ["form-control", "btn-default"] %>
   </div>
