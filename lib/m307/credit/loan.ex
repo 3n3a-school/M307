@@ -7,7 +7,7 @@ defmodule M307.Credit.Loan do
     field :name, :string
     field :phone, :string
     field :rate_count, :integer
-    field :status, Ecto.Enum, values: [:open, :closed]
+    field :status, Ecto.Enum, values: [:open, :closed], default: :open
     field :credit_package, :id
 
     timestamps()

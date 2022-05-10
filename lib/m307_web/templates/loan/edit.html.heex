@@ -1,5 +1,51 @@
 <h1>Edit Loan</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.loan_path(@conn, :update, @loan)) %>
+<.form let={f} for={@changeset} action={Routes.loan_path(@conn, :update, @loan)}>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= label f, :name %>
+    <%= text_input f, :name, class: ["form-control"] %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="mb-3">
+    <%= label f, :email %>
+    <%= text_input f, :email, class: ["form-control"] %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="mb-3">
+    <%= label f, :phone %>
+    <%= text_input f, :phone, class: ["form-control"] %>
+    <%= error_tag f, :phone %>
+  </div>
+
+  <div class="mb-3">
+    <%= label f, :rate_count %>
+    <%= number_input f, :rate_count, class: ["form-control"], readonly: true %>
+    <%= error_tag f, :rate_count %>
+  </div>
+  
+  <div class="mb-3">
+    <%= label f, :status %>
+    <%= select f, :status, Ecto.Enum.values(M307.Credit.Loan, :status), prompt: "Choose a value", class: ["form-control"] %>
+    <%= error_tag f, :status %>
+  </div>
+  
+  <div class="mb-3">
+    <%= label f, :credit_package %>
+    <%= select f, :credit_package, @credit_packages, prompt: "Choose a value", class: ["form-control"] %>
+    <%= error_tag f, :credit_package %>
+  </div>
+  
+  <div>
+    <%= submit "Save", class: ["form-control", "btn-default"] %>
+  </div>
+</.form>
 
 <span><%= link "Back", to: Routes.loan_path(@conn, :index) %></span>
