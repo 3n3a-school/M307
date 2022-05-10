@@ -7,7 +7,7 @@ defmodule M307.Credit.Loan do
     field :name, :string
     field :phone, :string
     field :rate_count, :integer
-    field :status, Ecto.Enum, values: [:open, :closed]
+    field :status, Ecto.Enum, values: [:open, :closed], default: :open
     field :credit_package, :id
 
     timestamps()
@@ -22,6 +22,7 @@ defmodule M307.Credit.Loan do
     )
     |> validate_email()
     |> validate_phone()
+    |> validate_rate_count()
   end
 
   defp validate_email(changeset) do
@@ -36,6 +37,15 @@ defmodule M307.Credit.Loan do
       :phone,
       ~r/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i,
       message: "Die eingegebene Telefonnummer hat ein ungültiges Format."
+    )
+  end
+
+  def validate_rate_count(changeset) do
+    changeset
+    |> validate_number(:rate_count,
+      greater_than_or_equal_to: 0,
+      less_than_or_equal_to: 10,
+      message: "Die Anzahl Raten muss zwischen null und zehn liegen."
     )
   end
 end
