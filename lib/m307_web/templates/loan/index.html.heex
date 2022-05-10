@@ -8,6 +8,7 @@
       <th>Phone</th>
       <th>Rate count</th>
       <th>Status</th>
+      <th>Deadline Status</th>
 
       <th></th>
     </tr>
@@ -20,6 +21,7 @@
       <td><%= loan.phone %></td>
       <td><%= loan.rate_count %></td>
       <td><%= loan.status %></td>
+      <td><%= loan_deadline(loan) %></td>
 
       <td>
         <span><%= link "Show", to: Routes.loan_path(@conn, :show, loan) %></span>
