@@ -56,7 +56,8 @@ defmodule M307Web.LoanController do
 
   def delete(conn, %{"id" => id}) do
     loan = Credit.get_loan!(id)
-    
+    loans = Credit.list_loans()
+
     case Credit.update_loan(loan, %{"status" => :closed}) do
       {:ok, loan} ->
         conn
