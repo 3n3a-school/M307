@@ -23,15 +23,20 @@
   </li>
 
   <li>
-    <strong>Status:</strong>
+    <strong>Payment Status:</strong>
     <%= @loan.status %>
   </li>
   
   <li>
-    <strong>Credit Package:</strong>
-    <%= @credit_package.name %>
+    <strong>Deadline Status:</strong>
+    <%= deadline_status(@loan) %>
   </li>
-
+  
+  <li>
+    <strong>Days until Deadline:</strong>
+    <%= days_until_deadline(@loan) %>
+  </li>
+  
   <li>
     <strong>Credit Package:</strong>
     <%= @credit_package.name %>
