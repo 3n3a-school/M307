@@ -1,5 +1,7 @@
 # Sitemap
 
+In der untenstehenden Tabelle sind sämtliche Routes ersichtlich, welche für den Nutzer der Seite sichtbar sind. Interne Routes, welche nur PUT oder PATCH Requests erlauben, sind nicht aufgelistet, da sie nur als API Routes dienen.
+
 | Titel         | Route           | Inhalt                                                |
 | ------------- | --------------- | ----------------------------------------------------- |
 | Startpage     | /               | Die Startseite mit Navigation.                        |
