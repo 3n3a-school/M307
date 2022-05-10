@@ -27,7 +27,7 @@
 
   <div class="mb-3">
     <%= label f, :rate_count %>
-    <%= number_input f, :rate_count, class: ["form-control"], readonly: true %>
+    <%= number_input f, :rate_count, class: ["form-control"], readonly: true, min: 1, max: 10 %>
     <%= error_tag f, :rate_count %>
   </div>
   
