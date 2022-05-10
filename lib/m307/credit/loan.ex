@@ -22,6 +22,7 @@ defmodule M307.Credit.Loan do
     )
     |> validate_email()
     |> validate_phone()
+    |> validate_rate_count()
   end
 
   defp validate_email(changeset) do
@@ -37,5 +38,10 @@ defmodule M307.Credit.Loan do
       ~r/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i,
       message: "Die eingegebene Telefonnummer hat ein ungültiges Format."
     )
+  end
+
+  def validate_rate_count(changeset) do
+    changeset
+    |> validate_number(:rate_count, greater_than_or_equal_to: 0, lower_than_or_equal_to: 10)
   end
 end
