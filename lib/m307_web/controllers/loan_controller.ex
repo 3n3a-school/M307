@@ -34,7 +34,8 @@ defmodule M307Web.LoanController do
 
   def show(conn, %{"id" => id}) do
     loan = Credit.get_loan!(id)
-    render(conn, "show.html", loan: loan)
+    credit_package = Repo.get!(Package, loan.credit_package)
+    render(conn, "show.html", loan: loan, credit_package: credit_package)
   end
 
   def edit(conn, %{"id" => id}) do
