@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="dokumentation/einleitung.html">Dokumentation</a></li><li class="chapter-item expanded "><a href="dokumentation/sitemap.html"><strong aria-hidden="true">1.</strong> Sitemap</a></li><li class="chapter-item expanded "><a href="dokumentation/formulare.html"><strong aria-hidden="true">2.</strong> Formulare</a></li><li class="chapter-item expanded "><a href="dokumentation/validierung.html"><strong aria-hidden="true">3.</strong> Validierung</a></li><li class="chapter-item expanded "><a href="dokumentation/datenbank.html"><strong aria-hidden="true">4.</strong> Datenbank</a></li><li class="chapter-item expanded "><a href="dokumentation/tests.html"><strong aria-hidden="true">5.</strong> Tests</a></li><li class="chapter-item expanded "><a href="dokumentation/roadmap.html"><strong aria-hidden="true">6.</strong> Roadmap</a></li><li class="chapter-item expanded affix "><a href="technologie/technologie.html">Technologie</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="dokumentation/einleitung.html">Dokumentation</a></li><li class="chapter-item expanded "><a href="dokumentation/sitemap.html"><strong aria-hidden="true">1.</strong> Sitemap</a></li><li class="chapter-item expanded "><a href="dokumentation/formulare.html"><strong aria-hidden="true">2.</strong> Formulare</a></li><li class="chapter-item expanded "><a href="dokumentation/validierung.html"><strong aria-hidden="true">3.</strong> Validierung</a></li><li class="chapter-item expanded "><a href="dokumentation/datenbank.html"><strong aria-hidden="true">4.</strong> Datenbank</a></li><li class="chapter-item expanded "><a href="dokumentation/tests.html"><strong aria-hidden="true">5.</strong> Tests</a></li><li class="chapter-item expanded "><a href="dokumentation/roadmap.html"><strong aria-hidden="true">6.</strong> Roadmap</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,6 +163,13 @@
 <tr><td>Show Loan</td><td>/loans/:id</td><td>Zeigt die Details eines existierenden Kredits an.</td></tr>
 </tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="formulare"><a class="header" href="#formulare">Formulare</a></h1>
+<p>In diesem Abschnitt finden Sie Wireframes, welche als Entwürfe der umgesetzten Formulare dienen. Sie visualisieren mutierbare und nicht mutierbare Felder, beziehungsweise erforderliche und nicht erforderliche Felder, sowie gültige und ungültige Eingaben.</p>
+<h2 id="edit-loan"><a class="header" href="#edit-loan">Edit Loan</a></h2>
+<p>Die untenstehende Grafik ist ein Wireframe für das Formular zur Bearbeitung einer Kreditverleihe. Das ausgegraute &quot;Rate Count&quot; Feld ist in diesem Formular nicht bearbeitbar. Der &quot;Rate Count&quot; kann nur beim erstellen eines Kreditverleihs gesetzt werden und ist nicht mutierbar.</p>
+<p><img src="dokumentation/formulare/formular-edit.png" alt="img" /></p>
+<h2 id="new-loan"><a class="header" href="#new-loan">New Loan</a></h2>
+<p>Die untenstehende Grafik ist ein Wireframe für das Formular zur Erstellung einer Kreditverleihe. Die rot markierten Felder sind erforderlich. Das Feld &quot;Telefon&quot; ist optional.</p>
+<p><img src="dokumentation/formulare/formular-new.png" alt="img" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="validierung"><a class="header" href="#validierung">Validierung</a></h1>
 <table><thead><tr><th>Formular</th><th>Feld</th><th>Validierung</th></tr></thead><tbody>
 <tr><td>Create/Edit Kredit</td><td>Name</td><td>required, trim,</td></tr>
@@ -175,6 +182,10 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="datenbank"><a class="header" href="#datenbank">Datenbank</a></h1>
 <p>In der untenstehenden Graphik ist unsere Datenbank Struktur ersichtlich. Sie besteht aus zwei Tabellen, namentlich &quot;loans&quot;, welche sämtliche Kredite enthält und &quot;credit_packages&quot;, welche die verfügbaren Kredit Packete enthält.</p>
 <p><img src="https://cdn.discordapp.com/attachments/973475824546230292/973572557070549042/unknown.png" alt="img" /></p>
+<h2 id="orm-object-relational-mapper"><a class="header" href="#orm-object-relational-mapper">ORM (Object Relational Mapper)</a></h2>
+<p>Unsere Tabellen werden von einem ORM automatisch aus Programmcode generiert. Die Tabellenschemas befinden sich <a href="https://github.com/3n3a-school/m307/blob/master/lib/m307/credit">hier</a>. Der ORM braucht zusätzlich zu unseren beiden Tabellen (&quot;loans&quot; und &quot;credit_packages&quot;) noch eine eigene Tabelle, namens &quot;schema_migrations&quot;, in denen er Schema Migrationen speichert. Sie hat aber ansonsten keine Funktion und kann ignoriert werden.</p>
+<h2 id="datenbank-dump"><a class="header" href="#datenbank-dump">Datenbank Dump</a></h2>
+<p>Um zu veranschaulichen, wie Daten in unserer Datenbank gespeichert werden, haben wir einen SQL Dump mit Beispieldaten erstellt. Die Datei kann in unserer GitHub Repository als Releases gefunden werden. <a href="https://github.com/3n3a-school/m307/releases">Hier geht's zu den Releases</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testfälle"><a class="header" href="#testfälle">Testfälle</a></h1>
 <h2 id="1-liste-der-kreditverleihen"><a class="header" href="#1-liste-der-kreditverleihen">1. Liste der Kreditverleihen</a></h2>
 <pre><code>GEGEBEN SEI
@@ -197,8 +208,8 @@ WENN
 DANN
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h1>
+<p>Das untenstehende Gantt Diagramm visualisiert unsere Arbeitseinteilung über die drei Tage, an denen wir an unserem Projekt gearbeitet haben. Es ist zu beachten, dass dieses Diagramm keine User Stories und deren Roadmap enthält, sondern ausschliesslich grössere Aufgabenblöcke. </p>
 <p><img src="dokumentation/roadmap/image-20220510150456774.png" alt="image-20220510150456774" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="technologie"><a class="header" href="#technologie">Technologie</a></h1>
 
                     </main>
 
