@@ -8,5 +8,3 @@
 - [Datenbank](./dokumentation/datenbank.md)
 - [Tests](./dokumentation/tests.md)
 - [Roadmap](./dokumentation/roadmap.md)
-
-[Technologie](./technologie/technologie.md)
