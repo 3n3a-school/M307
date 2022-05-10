@@ -19,22 +19,24 @@
   </thead>
   <tbody>
 <%= for loan <- @loans do %>
-    <tr>
-      <td><%= loan.name %></td>
-      <td><%= loan.email %></td>
-      <td><%= loan.phone %></td>
-      <td><%= get_credit_package(loan) %></td>
-      <td><%= loan.rate_count %></td>
-      <td><%= loan.status %></td>
-      <td><%= deadline_status(loan) %></td>
-      <td><%= days_until_deadline(loan) %></td>
+    <%= if loan.status == :open do %>
+      <tr>
+        <td><%= loan.name %></td>
+        <td><%= loan.email %></td>
+        <td><%= loan.phone %></td>
+        <td><%= get_credit_package(loan) %></td>
+        <td><%= loan.rate_count %></td>
+        <td><%= loan.status %></td>
+        <td><%= deadline_status(loan) %></td>
+        <td><%= days_until_deadline(loan) %></td>
 
-      <td>
-        <span><%= link "Show", to: Routes.loan_path(@conn, :show, loan) %></span>
-        <span><%= link "Edit", to: Routes.loan_path(@conn, :edit, loan) %></span>
-        <span><%= link "Delete", to: Routes.loan_path(@conn, :delete, loan), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
+        <td>
+          <span><%= link "Show", to: Routes.loan_path(@conn, :show, loan) %></span>
+          <span><%= link "Edit", to: Routes.loan_path(@conn, :edit, loan) %></span>
+          <span><%= link "Close", to: Routes.loan_path(@conn, :delete, loan), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
 <% end %>
   </tbody>
 </table>

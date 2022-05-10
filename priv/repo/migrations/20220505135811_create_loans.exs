@@ -6,7 +6,7 @@ defmodule M307.Repo.Migrations.CreateLoans do
       add :name, :string
       add :email, :string
       add :phone, :string
-      add :rate_count, :integer
+      add :rate_count, :integer, null: false
       add :status, :string
       add :credit_package, references(:credit_packages, on_delete: :nothing)
 
