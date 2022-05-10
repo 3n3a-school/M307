@@ -5,31 +5,43 @@
     </div>
   <% end %>
 
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
+  <div class="mb-3">
+    <%= label f, :name %>
+    <%= text_input f, :name, class: ["form-control"] %>
+    <%= error_tag f, :name %>
+  </div>
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
+  <div class="mb-3">
+    <%= label f, :email %>
+    <%= text_input f, :email, class: ["form-control"] %>
+    <%= error_tag f, :email %>
+  </div>
 
-  <%= label f, :phone %>
-  <%= text_input f, :phone %>
-  <%= error_tag f, :phone %>
+  <div class="mb-3">
+    <%= label f, :phone %>
+    <%= text_input f, :phone, class: ["form-control"] %>
+    <%= error_tag f, :phone %>
+  </div>
 
-  <%= label f, :rate_count %>
-  <%= number_input f, :rate_count %>
-  <%= error_tag f, :rate_count %>
-
-  <%= label f, :status %>
-  <%= select f, :status, Ecto.Enum.values(M307.Credit.Loan, :status), prompt: "Choose a value" %>
-  <%= error_tag f, :status %>
+  <div class="mb-3">
+    <%= label f, :rate_count %>
+    <%= number_input f, :rate_count, class: ["form-control"] %>
+    <%= error_tag f, :rate_count %>
+  </div>
   
-  <%= label f, :credit_package %>
-  <%= select f, :credit_package, @parents, prompt: "Choose a value" %>
-  <%= error_tag f, :credit_package %>
-
+  <div class="mb-3">
+    <%= label f, :status %>
+    <%= select f, :status, Ecto.Enum.values(M307.Credit.Loan, :status), prompt: "Choose a value", class: ["form-control"] %>
+    <%= error_tag f, :status %>
+  </div>
+  
+  <div class="mb-3">
+    <%= label f, :credit_package %>
+    <%= select f, :credit_package, @parents, prompt: "Choose a value", class: ["form-control"] %>
+    <%= error_tag f, :credit_package %>
+  </div>
+  
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: ["form-control", "btn-default"] %>
   </div>
 </.form>
