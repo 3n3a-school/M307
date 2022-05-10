@@ -1,5 +1,8 @@
 # M307
 
+![Production Deployment](https://github.com/3n3a-school/m307/actions/workflows/deploy.yml/badge.svg)
+
+
 ## Generate Project
 
 ```sh
