@@ -1,0 +1,31 @@
+version: '3'
+services:
+    db:
+        image: mysql
+        restart: always
+        ports:
+          - 3307:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: m307_test
+            MYSQL_DATABASE: m307_test
+            MYSQL_USER: m307_test
+            MYSQL_PASSWORD: m307_test
+        networks:
+            - m307
+    
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8088:80
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3307
+            PMA_USER: m307_test
+            PMA_PASSWORD: m307_test
+            PMA_ARBITRARY: 1
+        networks:
+            - m307
+
+networks:
+    m307:
