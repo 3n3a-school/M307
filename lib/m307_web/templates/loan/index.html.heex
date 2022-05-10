@@ -8,9 +8,11 @@
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>Credit Package</th>
       <th>Rate count</th>
       <th>Status</th>
       <th>Deadline Status</th>
+      <th>Days until Deadline</th>
 
       <th></th>
     </tr>
@@ -21,9 +23,11 @@
       <td><%= loan.name %></td>
       <td><%= loan.email %></td>
       <td><%= loan.phone %></td>
+      <td><%= get_credit_package(loan) %></td>
       <td><%= loan.rate_count %></td>
       <td><%= loan.status %></td>
-      <td><%= loan_deadline(loan) %></td>
+      <td><%= deadline_status(loan) %></td>
+      <td><%= days_until_deadline(loan) %></td>
 
       <td>
         <span><%= link "Show", to: Routes.loan_path(@conn, :show, loan) %></span>
