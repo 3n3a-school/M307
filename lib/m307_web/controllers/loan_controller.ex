@@ -50,16 +50,21 @@ defmodule M307Web.LoanController do
         |> redirect(to: Routes.loan_path(conn, :show, loan))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", loan: loan, changeset: changeset)
+        render(conn, "edit.html", loan: loan, changeset: changeset, credit_packages: Credit.list_packages())
     end
   end
 
   def delete(conn, %{"id" => id}) do
     loan = Credit.get_loan!(id)
-    {:ok, _loan} = Credit.delete_loan(loan)
+    
+    case Credit.update_loan(loan, %{"status" => :closed}) do
+      {:ok, loan} ->
+        conn
+        |> put_flash(:info, "Loan closed successfully.")
+        |> redirect(to: Routes.loan_path(conn, :index))
 
-    conn
-    |> put_flash(:info, "Loan deleted successfully.")
-    |> redirect(to: Routes.loan_path(conn, :index))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "index.html", loans: loans)
+    end
   end
 end

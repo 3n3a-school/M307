@@ -9,19 +9,19 @@
 
   <div class="mb-3">
     <%= label f, :name %>
-    <%= text_input f, :name, class: ["form-control"] %>
+    <%= text_input f, :name, class: ["form-control"], required: true %>
     <%= error_tag f, :name %>
   </div>
 
   <div class="mb-3">
     <%= label f, :email %>
-    <%= text_input f, :email, class: ["form-control"] %>
+    <%= text_input f, :email, class: ["form-control"], required: true, type: "email" %>
     <%= error_tag f, :email %>
   </div>
 
   <div class="mb-3">
     <%= label f, :phone %>
-    <%= text_input f, :phone, class: ["form-control"] %>
+    <%= text_input f, :phone, class: ["form-control"], type: "phone" %>
     <%= error_tag f, :phone %>
   </div>
 
