@@ -13,9 +13,9 @@ DANN            Sehe ich alle Kredite von der Datenbank aufgelistet
 ### 2. Details eines Kreditverleihs
 
 ```
-GEGEBEN SEI     Ich bin auf der `/loans` Route
+GEGEBEN SEI     Ich bin auf der `/loans/:id` Route
 WENN            Es Kredite auf in der Datenbank hat
-DANN            Sehe ich die Informationen in der Liste
+DANN            Sehe ich die Details eines Kredits
 ```
 
 ## 3. Schliessen eines Kreditverleihs
@@ -77,6 +77,20 @@ GEGEBEN SEI     Ich bin auf der `/loans/new` Route
 WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `0795236423` eingebe 
 DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
 ```
+
+## Testprotokoll
+| Test Nummer | Datum        | Status |
+|-------------|--------------|--------|
+| 1           | 11. Mai 2022 | ✅     |
+| 2           | 11. Mai 2022 | ✅     |
+| 3           | 11. Mai 2022 | ✅     |
+| 4           | 11. Mai 2022 | ✅     |
+| 5           | 11. Mai 2022 | ✅     |
+| 6           | 11. Mai 2022 | ✅     |
+| 7.1         | 11. Mai 2022 | ✅     |
+| 7.2         | 11. Mai 2022 | ✅     |
+| 8.1         | 11. Mai 2022 | ✅     |
+| 8.2         | 11. Mai 2022 | ✅     |
 
 ## Automatisierte Tests mit Cypress
 
