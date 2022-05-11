@@ -24,11 +24,4 @@ describe('Integration Test', () => {
         cy.visit(URL)
         cy.get("body > div > main > table > tbody").children().should("have.length", 1)
     })
-
-    it('should close a loan', () => {
-        cy.visit(URL)
-        cy.get("body > div > main > table > tbody > tr:nth-child(1) > td:nth-child(8) > span:nth-child(3) > a").click()
-        cy.on("window:confirm", () => true)
-        cy.get("body > div > main > table > tbody").children().should("have.length", 0)
-    })
 })
