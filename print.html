@@ -221,6 +221,26 @@ DANN            Öffnet sich ein Formular, in welchem eine neue Hypothek erstell
 WENN            die Route nicht im Router enthalten ist
 DANN            werde ich ohne Fehlermeldung auf die Dashboardseite zurückgesendet
 </code></pre>
+<h2 id="71-e-mail-validierung"><a class="header" href="#71-e-mail-validierung">7.1 E-Mail Validierung</a></h2>
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `lfnevoewio` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+</code></pre>
+<h2 id="72-e-mail-validierung"><a class="header" href="#72-e-mail-validierung">7.2 E-Mail Validierung</a></h2>
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `kris@krishuber.xyz` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+</code></pre>
+<h2 id="81-telefonnummer-validierung"><a class="header" href="#81-telefonnummer-validierung">8.1 Telefonnummer Validierung</a></h2>
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `7` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+</code></pre>
+<h2 id="82-telefonnummer-validierung"><a class="header" href="#82-telefonnummer-validierung">8.2 Telefonnummer Validierung</a></h2>
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `0795236423` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+</code></pre>
 <h2 id="automatisierte-tests-mit-cypress"><a class="header" href="#automatisierte-tests-mit-cypress">Automatisierte Tests mit Cypress</a></h2>
 <p>Zusätzlich zu unseren manuellen Tests, verwenden wir das Testing Framework Cypress, um unsere Seite automatisch zu testen. Sämtliche Testfälle sind <a href="https://github.com/3n3a-school/m307/tree/master/test/cypress/integration">hier</a> in unserer GitHub Repository zu finden. Die Tests sind im Code bereits dokumentiert. Sie werden automatisch bei jedem Pull Request und bei jedem Push auf den master Branch ausgeführt. Ob die Tests erfolgreich sind oder nicht, ist am CI Badge im <a href="https://github.com/3n3a-school/m307/blob/master/README.md">README</a> ersichtlich.</p>
 <p>Der Continuous Integration Status Badge sieht wie folgt aus:</p>
