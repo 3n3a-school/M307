@@ -190,12 +190,13 @@
 <h2 id="datenbank-dump"><a class="header" href="#datenbank-dump">Datenbank Dump</a></h2>
 <p>Um zu veranschaulichen, wie Daten in unserer Datenbank gespeichert werden, haben wir einen SQL Dump mit Beispieldaten erstellt. Die Datei kann in unserer GitHub Repository als Releases gefunden werden. <a href="https://github.com/3n3a-school/m307/releases">Hier geht's zu den Releases</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testfälle"><a class="header" href="#testfälle">Testfälle</a></h1>
-<h2 id="1-liste-der-kreditverleihen"><a class="header" href="#1-liste-der-kreditverleihen">1. Liste der Kreditverleihen</a></h2>
+<h2 id="manuelle-tests"><a class="header" href="#manuelle-tests">Manuelle Tests</a></h2>
+<h3 id="1-liste-der-kreditverleihen"><a class="header" href="#1-liste-der-kreditverleihen">1. Liste der Kreditverleihen</a></h3>
 <pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
 WENN            Es Kredite auf in der Datenbank hat
 DANN            Sehe ich alle Kredite von der Datenbank aufgelistet
 </code></pre>
-<h2 id="2-details-eines-kreditverleihs"><a class="header" href="#2-details-eines-kreditverleihs">2. Details eines Kreditverleihs</a></h2>
+<h3 id="2-details-eines-kreditverleihs"><a class="header" href="#2-details-eines-kreditverleihs">2. Details eines Kreditverleihs</a></h3>
 <pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
 WENN            Es Kredite auf in der Datenbank hat
 DANN            Sehe ich die Informationen in der Liste
@@ -205,7 +206,7 @@ DANN            Sehe ich die Informationen in der Liste
 WENN            Es Kredite auf in der Datenbank hat
 DANN            Wenn ich auf den Close Button drücke, kommt ein bestätigungs Dialog, wenn ich bestätige wird der Kredit geschlossen.
 </code></pre>
-<h2 id="4-bearbeiten-eines-kreditverleihs"><a class="header" href="#4-bearbeiten-eines-kreditverleihs">4. Bearbeiten eines Kreditverleihs</a></h2>
+<h3 id="4-bearbeiten-eines-kreditverleihs"><a class="header" href="#4-bearbeiten-eines-kreditverleihs">4. Bearbeiten eines Kreditverleihs</a></h3>
 <pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
 WENN            Es Kredite auf in der Datenbank hat
 DANN            Wenn ich auf den Edit Button drücke, werde ich auf das editierungs Formular weitergeleitet
@@ -220,6 +221,10 @@ DANN            Öffnet sich ein Formular, in welchem eine neue Hypothek erstell
 WENN            die Route nicht im Router enthalten ist
 DANN            werde ich ohne Fehlermeldung auf die Dashboardseite zurückgesendet
 </code></pre>
+<h2 id="automatisierte-tests-mit-cypress"><a class="header" href="#automatisierte-tests-mit-cypress">Automatisierte Tests mit Cypress</a></h2>
+<p>Zusätzlich zu unseren manuellen Tests, verwenden wir das Testing Framework Cypress, um unsere Seite automatisch zu testen. Sämtliche Testfälle sind <a href="https://github.com/3n3a-school/m307/tree/master/test/cypress/integration">hier</a> in unserer GitHub Repository zu finden. Die Tests sind im Code bereits dokumentiert. Sie werden automatisch bei jedem Pull Request und bei jedem Push auf den master Branch ausgeführt. Ob die Tests erfolgreich sind oder nicht, ist am CI Badge im <a href="https://github.com/3n3a-school/m307/blob/master/README.md">README</a> ersichtlich.</p>
+<p>Der Continuous Integration Status Badge sieht wie folgt aus:</p>
+<p><a href="https://github.com/3n3a-school/m307/actions/workflows/ci.yml"><img src="https://github.com/3n3a-school/m307/actions/workflows/ci.yml/badge.svg?branch=master" alt="CI" /></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h1>
 <p>Das untenstehende Gantt Diagramm visualisiert unsere Arbeitseinteilung über die drei Tage, an denen wir an unserem Projekt gearbeitet haben. Es ist zu beachten, dass dieses Diagramm keine User Stories und deren Roadmap enthält, sondern ausschliesslich grössere Aufgabenblöcke. </p>
 <p><img src="dokumentation/roadmap/image-20220510150456774.png" alt="image-20220510150456774" /></p>
