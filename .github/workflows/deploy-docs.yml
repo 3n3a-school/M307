@@ -13,21 +13,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: baileyjm02/markdown-to-pdf@v1
-        with:
-          input_dir: src
-          output_dir: docs/pdf/
-          images_dir: src/images/
-          image_import: ./images
-          # Default is true, can set to false to only get PDF files
-          build_html: false
-
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: 'latest'
 
       - run: mdbook build
+
+      - name: html to pdf
+        uses: fifsky/html-to-pdf-action@master
+        with:
+          htmlFile: ./build/index.html
+          outputFile: ./build/dokumentation.pdf
+          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
