@@ -45,7 +45,11 @@ jobs:
         cd ./assets
         npm install
     
-    - name: run cypress
-      run: |
-        chmod +x ./cypress-run.sh
-        sh ./cypress-run.sh
+    - name: run headless test
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: |
+          chmod +x ./cypress-run.sh
+          sh ./cypress-run.sh
+        working-directory: ./
+    
