@@ -1,5 +1,5 @@
 [book]
-authors = ["Lian Studer"]
+authors = ["Lian Studer", "Enea Krähenbühl"]
 language = "en"
 multilingual = false
 src = "src"
@@ -7,3 +7,7 @@ title = "M307 Kreditverleih - Dokumentation"
 
 [build]
 build-dir = "docs"
+
+[output.html]
+
+[output.pdf]
