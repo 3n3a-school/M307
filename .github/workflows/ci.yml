@@ -16,9 +16,10 @@ jobs:
       m307_test_db:
         image: mysql
         env:
-          POSTGRES_USER: m307_test
-          POSTGRES_PASSWORD: m307_test
-          POSTGRES_DB: m307_test
+          MYSQL_ROOT_PASSWORD: m307_test
+          MYSQL_DATABASE: m307_test
+          MYSQL_USER: m307_test
+          MYSQL_PASSWORD: m307_test
         ports:
           - 3307:3306
         
