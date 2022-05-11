@@ -47,3 +47,31 @@ GEGEBEN SEI     Ich verbinde auf eine falsche Route
 WENN            die Route nicht im Router enthalten ist
 DANN            werde ich ohne Fehlermeldung auf die Dashboardseite zurückgesendet
 ```
+
+## 7.1 E-Mail Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `lfnevoewio` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+```
+
+## 7.2 E-Mail Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `kris@krishuber.xyz` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+```
+
+## 8.1 Telefonnummer Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `7` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+```
+
+## 8.2 Telefonnummer Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `0795236423` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+```
