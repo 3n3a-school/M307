@@ -8,46 +8,53 @@
     </div>
   <% end %>
 
+  <fieldset>
+    <legend>Person</legend>
 
-  <div class="mb-3">
-    <%= label f, :name %>
-    <%= text_input f, :name, class: ["form-control"] %>
-    <%= error_tag f, :name %>
-  </div>
-
-  <div class="mb-3">
-    <%= label f, :email %>
-    <%= text_input f, :email, class: ["form-control"], type: "email" %>
-    <%= error_tag f, :email %>
-  </div>
-
-  <div class="mb-3">
-    <%= label f, :phone %>
-    <%= text_input f, :phone, class: ["form-control"], type: "tel" %>
-    <%= error_tag f, :phone %>
-  </div>
-
-  <div class="mb-3">
-    <%= label f, :rate_count %>
-    <%= number_input f, :rate_count, class: ["form-control"], min: 1, max: 10 %>
-    <%= error_tag f, :rate_count %>
-  </div>
-  
-  <div class="mb-3">
-    <%= label f, :credit_package %>
-    <%= select f, :credit_package, @credit_packages, prompt: "Choose a value", class: ["form-control"] %>
-    <%= error_tag f, :credit_package %>
-  </div>
-
-  <div class="mb-3" hidden>
-    <div class="alert alert-info">
-      <p id="loan_rate_payback_date"></p>
+    <div class="mb-3">
+      <%= label f, :name %>
+      <%= text_input f, :name, class: ["form-control"], required: true %>
+      <%= error_tag f, :name %>
     </div>
-  </div>
-  
+
+    <div class="mb-3">
+      <%= label f, :email %>
+      <%= text_input f, :email, class: ["form-control"], required: true, type: "email" %>
+      <%= error_tag f, :email %>
+    </div>
+
+    <div class="mb-3">
+      <%= label f, :phone %>
+      <%= text_input f, :phone, class: ["form-control"], type: "tel" %>
+      <%= error_tag f, :phone %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Loan</legend>
+
+    <div class="mb-3">
+      <%= label f, :rate_count %>
+      <%= number_input f, :rate_count, class: ["form-control"], min: 1, max: 10 %>
+      <%= error_tag f, :rate_count %>
+    </div>
+
+    <div class="mb-3">
+      <%= label f, :credit_package %>
+      <%= select f, :credit_package, @credit_packages, prompt: "Choose a value", class: ["form-control"] %>
+      <%= error_tag f, :credit_package %>
+    </div>
+
+    <div class="mb-3" hidden>
+      <div class="alert alert-info">
+        <p id="loan_rate_payback_date"></p>
+      </div>
+    </div>
+  </fieldset>
+
   <div>
     <%= submit "Save", class: ["form-control", "btn-primary"] %>
   </div>
 </.form>
 
-<span><%= link "Back", to: Routes.loan_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.loan_path(@conn, :index), class: ["mt-5"] %></span>
