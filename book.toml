@@ -7,7 +7,3 @@ title = "M307 Kreditverleih - Dokumentation"
 
 [build]
 build-dir = "docs"
-
-[output.html]
-
-[output.pdf]
