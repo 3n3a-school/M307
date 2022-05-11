@@ -6,3 +6,4 @@
 - **Repository:** [GitHub](https://github.com/3n3a/m307/)
 - **Jira Projekt:** [3n3a.atlassiant.net](https://3n3a.atlassian.net/jira/)
 - **Produktives Deployment:** [m307.3n3a.ch](https://m307.3n3a.ch/)
+- **Dokumentation als PDF:** [Download PDF](./dokumentation.pdf)
