@@ -10,7 +10,7 @@ config :m307, M307.Repo,
   password: "m307_test",
   hostname: "localhost",
   port: 3307,
-  database: "m307_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "m307_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
