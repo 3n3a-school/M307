@@ -4,9 +4,8 @@ In der untenstehenden Tabelle sind sämtliche Routes ersichtlich, welche für de
 
 | Titel         | Route           | Inhalt                                                |
 | ------------- | --------------- | ----------------------------------------------------- |
-| Startpage     | /               | Die Startseite mit Navigation.                        |
+| Startpage     | /               | Die Startseite, leitet den Nutzer zu '/loans' weiter. |
 | Listing Loans | /loans          | Liste aller offenen Kredite.                          |
 | New Loan      | /loans/new      | Formular zur Erstellung eines neuen Kredits.          |
 | Edit Loan     | /loans/:id/edit | Formular zur Bearbeitung eines existierenden Kredits. |
 | Show Loan     | /loans/:id      | Zeigt die Details eines existierenden Kredits an.     |
-
