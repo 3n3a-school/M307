@@ -142,9 +142,9 @@ WENN            Es Kredite auf in der Datenbank hat
 DANN            Sehe ich alle Kredite von der Datenbank aufgelistet
 </code></pre>
 <h3 id="2-details-eines-kreditverleihs"><a class="header" href="#2-details-eines-kreditverleihs">2. Details eines Kreditverleihs</a></h3>
-<pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans/:id` Route
 WENN            Es Kredite auf in der Datenbank hat
-DANN            Sehe ich die Informationen in der Liste
+DANN            Sehe ich die Details eines Kredits
 </code></pre>
 <h2 id="3-schliessen-eines-kreditverleihs"><a class="header" href="#3-schliessen-eines-kreditverleihs">3. Schliessen eines Kreditverleihs</a></h2>
 <pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
@@ -186,6 +186,19 @@ DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
 WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `0795236423` eingebe 
 DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
 </code></pre>
+<h2 id="testprotokoll"><a class="header" href="#testprotokoll">Testprotokoll</a></h2>
+<table><thead><tr><th>Test Nummer</th><th>Datum</th><th>Status</th></tr></thead><tbody>
+<tr><td>1</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>2</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>3</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>4</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>5</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>6</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>7.1</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>7.2</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>8.1</td><td>11. Mai 2022</td><td>✅</td></tr>
+<tr><td>8.2</td><td>11. Mai 2022</td><td>✅</td></tr>
+</tbody></table>
 <h2 id="automatisierte-tests-mit-cypress"><a class="header" href="#automatisierte-tests-mit-cypress">Automatisierte Tests mit Cypress</a></h2>
 <p>Zusätzlich zu unseren manuellen Tests, verwenden wir das Testing Framework Cypress, um unsere Seite automatisch zu testen. Sämtliche Testfälle sind <a href="https://github.com/3n3a-school/m307/tree/master/test/cypress/integration">hier</a> in unserer GitHub Repository zu finden. Die Tests sind im Code bereits dokumentiert. Sie werden automatisch bei jedem Pull Request und bei jedem Push auf den master Branch ausgeführt. Ob die Tests erfolgreich sind oder nicht, ist am CI Badge im <a href="https://github.com/3n3a-school/m307/blob/master/README.md">README</a> ersichtlich.</p>
 <p>Der Continuous Integration Status Badge sieht wie folgt aus:</p>
