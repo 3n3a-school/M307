@@ -1,5 +1,6 @@
 #!/bin/sh
 
+MIX_ENV=test mix deps.get
 MIX_ENV=test mix ecto.reset
 echo "===STARTING PHX SERVER==="
 echo "===IF STARTING CYPRESS FAILS==="
