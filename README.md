@@ -1,7 +1,7 @@
 # M307
 
 ![Production Deployment](https://github.com/3n3a-school/m307/actions/workflows/deploy.yml/badge.svg)
-
+[![CI](https://github.com/3n3a-school/m307/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/3n3a-school/m307/actions/workflows/ci.yml)
 
 ## Generate Project
 
@@ -11,7 +11,7 @@ mix phx.new —database=mysql —no-dashboard —no-live —no-mailer
 
 ## Start Dev
 
-1. Start Mysql Db 
+1. Start Mysql Db
 
 ```sh
 (cd _infra/dev/ && ./start.sh)
