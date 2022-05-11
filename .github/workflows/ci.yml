@@ -29,7 +29,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.15.0
-        cache: 'npm'
         
     - name: use elixir 1.13.2
       uses: erlef/setup-beam@v1
