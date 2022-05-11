@@ -5,3 +5,4 @@ import "../vendor/bootstrap-icons.css"
 import "phoenix_html"
 import "../vendor/bootstrap.bundle.min.js"
 
+import "./new-form"
