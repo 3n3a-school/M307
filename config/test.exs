@@ -19,7 +19,7 @@ config :m307, M307.Repo,
 config :m307, M307Web.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "tFU0jmchkNgsj6fzO736uBDg9Ng+4IKlS6Se3vHPjcvMS5xxmhKZPFuLJZLFdoBv",
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
