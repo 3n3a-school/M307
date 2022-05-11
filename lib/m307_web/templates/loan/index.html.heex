@@ -10,7 +10,6 @@
       <th>Phone</th>
       <th>Credit Package</th>
       <th>Rate count</th>
-      <th>Status</th>
       <th>Deadline Status</th>
       <th>Days until Deadline</th>
 
@@ -26,7 +25,6 @@
         <td><%= loan.phone %></td>
         <td><%= get_credit_package(loan) %></td>
         <td><%= loan.rate_count %></td>
-        <td><%= loan.status %></td>
         <td><%= deadline_status(loan) %></td>
         <td><%= days_until_deadline(loan) %></td>
 
