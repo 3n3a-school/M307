@@ -1,9 +1,9 @@
 <h1>Listing Loans</h1>
 
-<span><%= link "New Loan", to: Routes.loan_path(@conn, :new) %></span>
+<span><%= link "New Loan", to: Routes.loan_path(@conn, :new), id: "new_loan_btn" %></span>
 
 <div class="table-responsive">
-  <table class="table">
+  <table class="table" id="loan_table">
     <thead>
       <tr>
         <th>Name</th>
