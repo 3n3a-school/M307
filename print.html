@@ -208,7 +208,17 @@ DANN            Wenn ich auf den Close Button drücke, kommt ein bestätigungs D
 <h2 id="4-bearbeiten-eines-kreditverleihs"><a class="header" href="#4-bearbeiten-eines-kreditverleihs">4. Bearbeiten eines Kreditverleihs</a></h2>
 <pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
 WENN            Es Kredite auf in der Datenbank hat
-DANN            Wenn ich auf den Edit Button drücke, werde ich auf daseditierungs Formular weitergeleitet
+DANN            Wenn ich auf den Edit Button drücke, werde ich auf das editierungs Formular weitergeleitet
+</code></pre>
+<h2 id="5-hinzufügen-eines-kreditverleihs"><a class="header" href="#5-hinzufügen-eines-kreditverleihs">5. Hinzufügen eines Kreditverleihs</a></h2>
+<pre><code>GEGEBEN SEI     Ich bin auf der `/loans` Route
+WENN            Ich auf den `New Loan` Button drücke
+DANN            Öffnet sich ein Formular, in welchem eine neue Hypothek erstellt werden kann
+</code></pre>
+<h2 id="6-falsche-route-wurde-ausgewählt"><a class="header" href="#6-falsche-route-wurde-ausgewählt">6. Falsche Route wurde ausgewählt</a></h2>
+<pre><code>GEGEBEN SEI     Ich verbinde auf eine falsche Route
+WENN            die Route nicht im Router enthalten ist
+DANN            werde ich ohne Fehlermeldung auf die Dashboardseite zurückgesendet
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h1>
 <p>Das untenstehende Gantt Diagramm visualisiert unsere Arbeitseinteilung über die drei Tage, an denen wir an unserem Projekt gearbeitet haben. Es ist zu beachten, dass dieses Diagramm keine User Stories und deren Roadmap enthält, sondern ausschliesslich grössere Aufgabenblöcke. </p>
