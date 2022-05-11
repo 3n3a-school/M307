@@ -50,6 +50,34 @@ WENN            die Route nicht im Router enthalten ist
 DANN            werde ich ohne Fehlermeldung auf die Dashboardseite zurückgesendet
 ```
 
+## 7.1 E-Mail Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `lfnevoewio` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+```
+
+## 7.2 E-Mail Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im E-Mail Feld `kris@krishuber.xyz` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+```
+
+## 8.1 Telefonnummer Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `7` eingebe 
+DANN            Auf den `Save` Button drücke kommt eine Fehlermeldung
+```
+
+## 8.2 Telefonnummer Validierung
+```
+GEGEBEN SEI     Ich bin auf der `/loans/new` Route
+WENN            Wenn ich alle Felder richtig ausfülle und im Telefonnummer Feld `0795236423` eingebe 
+DANN            Auf den `Save` Button drücke wird der Eintrag gespeichert
+```
+
 ## Automatisierte Tests mit Cypress
 
 Zusätzlich zu unseren manuellen Tests, verwenden wir das Testing Framework Cypress, um unsere Seite automatisch zu testen. Sämtliche Testfälle sind [hier](https://github.com/3n3a-school/m307/tree/master/test/cypress/integration) in unserer GitHub Repository zu finden. Die Tests sind im Code bereits dokumentiert. Sie werden automatisch bei jedem Pull Request und bei jedem Push auf den master Branch ausgeführt. Ob die Tests erfolgreich sind oder nicht, ist am CI Badge im [README](https://github.com/3n3a-school/m307/blob/master/README.md) ersichtlich.
