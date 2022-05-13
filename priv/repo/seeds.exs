@@ -11,6 +11,7 @@
 # and so on) as they will fail if something goes wrong.
 
 # Insert Credit Packages
+if M307.Repo.exists?(M307.Credit.Package) do
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Basic: 1k"})
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Basic: 2k"})
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Basic: 3k"})
@@ -51,3 +52,4 @@ M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Karma: 7k"})
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Karma: 8k"})
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Karma: 9k"})
 M307.Repo.insert!(%M307.Credit.Package{name: "Kredit Karma: 10k"})
+end
